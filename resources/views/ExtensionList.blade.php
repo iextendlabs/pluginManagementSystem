@@ -64,10 +64,10 @@
                           @foreach($extensions as $extension)
                           <tr>
                             <td> {{ substr($extension->name,0,30)}}.... </td>
-                            <td> @if($extension->demo_link != 'null') <a href="{{$extension->demo_link}}">Click</a>@else ---- @endif</td>
+                            <td> @if($extension->demo_link != 'null') <a href="{{$extension->demo_link}}" target="_blank">Click</a>@else ---- @endif</td>
                             <td> {{$extension->admin_username}} </td>
                             <td> {{$extension->admin_password}} </td>
-                            <td> @if($extension->marketplace_link != 'null') <a href="{{$extension->marketplace_link}}">Click</a>@else ---- @endif</td>
+                            <td> @if($extension->marketplace_link != 'null') <a href="{{$extension->marketplace_link}}" target="_blank">Click</a>@else ---- @endif</td>
                             <td> @if($extension->demo == 1) Ready @else Not Ready @endif</td>
                             <td>
                               <a href="{{url('/deleteExtension',$extension->id)}}"><div class="badge badge-outline-warning"> Delete</div></a>
