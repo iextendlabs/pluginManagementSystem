@@ -70,7 +70,7 @@
                             <td> @if($extension->marketplace_link != 'null') <a href="{{$extension->marketplace_link}}" target="_blank">Click</a>@else ---- @endif</td>
                             <td> @if($extension->demo == 1) Ready @else Not Ready @endif</td>
                             <td>
-                              <a href="{{url('/deleteExtension',$extension->id)}}"><div class="badge badge-outline-warning"> Delete</div></a>
+                              <a href="{{url('/deleteExtension',$extension->id)}}" onclick="return confirm('Are you sure?')"><div class="badge badge-outline-warning"> Delete</div></a>
                               <a href="{{url('/editExtension',$extension->id)}}"><div class="badge badge-outline-success">Edit</div></a>
                               <a href="{{url('/viewUpdates',$extension->id)}}"><div class="badge badge-outline-primary">View Updates</div></a>
                             </td>
