@@ -21,6 +21,7 @@ class PlanStatusesSeeder extends Seeder
             'In Progress',
             'Block',
             'Done',
+            'Publish'
         ];
        
         foreach ($statuses as $status) {
