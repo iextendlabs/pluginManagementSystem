@@ -32,6 +32,7 @@ class ExtensionController extends Controller
                 "extensions.id", 
                 "extensions.title", 
                 "extensions.marketplaceLink",
+                "extensions.driveLink",
                 "extension_statuses.title as status"
             )
         ->leftJoin("extension_statuses", "extension_statuses.id", "=", "extensions.statusId")

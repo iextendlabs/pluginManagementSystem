@@ -186,4 +186,23 @@ class PlanController extends Controller
         return redirect()->back()
                         ->with('success','Comment successfully send.');
     }
+
+    public function publishPlan()
+    {
+        $query = Plan::select
+            (
+                "plans.id", 
+                "plans.title", 
+                "extensions.title as extension",
+                "plan_statuses.title as status"
+            )
+        ->leftJoin("plan_statuses", "plan_statuses.id", "=", "plans.statusId")
+        ->leftJoin("extensions", "extensions.id", "=", "plans.extensionId")->where('plans.statusId','4');
+        if(Auth::user()->id != 1){
+            $query->where('plans.assigneeId',Auth::user()->id);
+        }
+        $plans = $query->orderBy('plans.created_at','DESC')->paginate(5);
+        return view('plans.publishPlan',compact('plans'))
+            ->with('i', (request()->input('page', 1) - 1) * 5);
+    }
 }

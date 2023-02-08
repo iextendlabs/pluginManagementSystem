@@ -36,3 +36,4 @@ Route::group(['middleware' => ['auth']], function() {
 
 Route::get('/commentSystem/{id}',[PlanController::class,'commentSystem']);
 Route::post('/sendComment',[PlanController::class,'sendComment']);
+Route::get('/publishPlan',[PlanController::class,'publishPlan']);

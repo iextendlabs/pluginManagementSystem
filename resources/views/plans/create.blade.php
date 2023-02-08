@@ -42,7 +42,11 @@
                     <select name="extensionId" id="extension" class="form-control" >
                         <option></option>
                         @foreach($extensions as $extension)
-                        <option value="{{$extension->id}}">{{$extension->title}}</option>
+                        @if(old('extension') == $extension->id)
+                            <option value="{{$extension->id}}" selected>{{$extension->title}}</option>
+                        @else
+                            <option value="{{$extension->id}}">{{$extension->title}}</option>
+                        @endif
                         @endforeach
                     </select>
                 </div>
